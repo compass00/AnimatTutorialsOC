@@ -104,7 +104,8 @@ static NSString * const reuseIdentifier = @"MainCollectionViewCell";
     NSInteger r = indexPath.row;
     if (r == 0) {
         SimpleAnimatViewController* simple = [[SimpleAnimatViewController alloc] initWithNibName:@"SimpleAnimatViewController" bundle:nil];
-        [self presentViewController:simple animated:YES completion:^{}];
+        [self.navigationController pushViewController:simple animated:YES];
+        //[self presentViewController:simple animated:YES completion:^{}];
     }
 }
 /*

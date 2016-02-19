@@ -9,6 +9,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainCollectionViewController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="9Id-pp-fFH" userLabel="iOS Animation"/>
                     <connections>
                         <outlet property="collectionView" destination="x6n-S7-D6V" id="qlQ-MP-fdh"/>
                     </connections>
@@ -43,54 +44,16 @@
             </objects>
             <point key="canvasLocation" x="240" y="418"/>
         </scene>
-        <!--Root View Controller-->
-        <scene sceneID="rMb-eQ-0JG">
-            <objects>
-                <tableViewController id="Lwh-wr-qTP" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="Root View Controller" id="HJP-Pe-IE0"/>
-                    <connections>
-                        <outlet property="view" destination="4l1-PK-Ebd" id="Pk9-Te-mLS"/>
-                    </connections>
-                </tableViewController>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="4l1-PK-Ebd">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Hla-Kw-YdR">
-                        <size key="itemSize" width="83" height="77"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                    <cells>
-                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MainCollectionViewCell" id="q1q-o6-8F9" customClass="MainCollectionViewCell">
-                            <rect key="frame" x="0.0" y="0.0" width="83" height="77"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                <rect key="frame" x="0.0" y="0.0" width="83" height="77"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
-                        </collectionViewCell>
-                    </cells>
-                    <connections>
-                        <outlet property="dataSource" destination="BYZ-38-t0r" id="qOd-H0-UZJ"/>
-                        <outlet property="delegate" destination="BYZ-38-t0r" id="2HY-Hf-dUT"/>
-                    </connections>
-                </collectionView>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jIu-B2-PIi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Mni-yP-vbF">
             <objects>
                 <navigationController id="816-zN-MEH" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FYy-bw-hrn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FYy-bw-hrn" userLabel="iOS Animation">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Lwh-wr-qTP" kind="relationship" relationship="rootViewController" id="Era-2i-2EX"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="EmA-dP-erj"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nXr-xP-0dA" userLabel="First Responder" sceneMemberID="firstResponder"/>
