@@ -10,11 +10,5 @@
 
 @interface ViewController : UIViewController
 
-@property (strong) IBOutlet UIButton* cargreen;
-@property (strong) IBOutlet UIButton* carper;
-@property (strong) IBOutlet UIButton* carblue;
-
-- (IBAction)playAnimation:(id)sender;
-
 @end
 

@@ -5,11 +5,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--Main Collection View Controller-->
+        <!--iOS Animation-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainCollectionViewController" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="9Id-pp-fFH" userLabel="iOS Animation"/>
+                    <navigationItem key="navigationItem" title="iOS Animation" id="9Id-pp-fFH" userLabel="iOS Animation"/>
                     <connections>
                         <outlet property="collectionView" destination="x6n-S7-D6V" id="qlQ-MP-fdh"/>
                     </connections>

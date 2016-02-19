@@ -27,7 +27,7 @@ static NSString * const reuseIdentifier = @"MainCollectionViewCell";
     // Register cell classes
     [self.collectionView registerClass:[MainCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     UIImageView* bg =  [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
-    bg.image = [UIImage imageNamed:@"bg.jpg"];
+    bg.image = [UIImage imageNamed:@"launchscreen.png"];
     self.collectionView.backgroundView = bg;
     // Do any additional setup after loading the view.
 }
