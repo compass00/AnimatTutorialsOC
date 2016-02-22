@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AnimationBaseViewController.h"
 
-@interface SimpleAnimatViewController : UIViewController
+@interface SimpleAnimatViewController : AnimationBaseViewController
 @property (strong) IBOutlet UIButton* cargreen;
 @property (strong) IBOutlet UIButton* carper;
 @property (strong) IBOutlet UIButton* carblue;

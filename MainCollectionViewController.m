@@ -9,6 +9,7 @@
 #import "MainCollectionViewController.h"
 #import "MainCollectionViewCell.h"
 #import "SimpleAnimatViewController.h"
+#import "TransformKeyFrameViewController.h"
 
 @interface MainCollectionViewController ()
 
@@ -21,15 +22,13 @@ static NSString * const reuseIdentifier = @"MainCollectionViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Register cell classes
     [self.collectionView registerClass:[MainCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    UIImageView* bg =  [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
-    bg.image = [UIImage imageNamed:@"launchscreen.png"];
-    self.collectionView.backgroundView = bg;
-    // Do any additional setup after loading the view.
+     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,12 +49,12 @@ static NSString * const reuseIdentifier = @"MainCollectionViewCell";
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
+    return 2;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 2;
+    return 1;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -63,14 +62,11 @@ static NSString * const reuseIdentifier = @"MainCollectionViewCell";
    MainCollectionViewCell *cell = (MainCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"MainCollectionViewCell" forIndexPath:indexPath];
     // Configure the cell
     if (!cell) {
-        cell = [[MainCollectionViewCell alloc] initWithFrame:CGRectMake(0, 0, 128, 128)];
+        cell = [[MainCollectionViewCell alloc] initWithFrame:CGRectMake(0, 0, 256, 68)];
     }
     
-    //图片名称
-    NSInteger r = indexPath.row;
-    NSString *imageToLoad = r == 0 ? [NSString stringWithFormat:@"%@.png", @"egg_0"] : [NSString stringWithFormat:@"%@.png", @"chick_3"];
-    //加载图片
-    cell.imageview.image = [UIImage imageNamed:imageToLoad];
+    NSInteger r = indexPath.section;
+    cell.textLabel.text = r == 0 ? [NSString stringWithFormat:@"%@", @"UIView Animation"] : [NSString stringWithFormat:@"%@", @"Transform and Keyframe"];
      return cell;
 }
 
@@ -79,7 +75,7 @@ static NSString * const reuseIdentifier = @"MainCollectionViewCell";
 //定义每个UICollectionView 的大小
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(128, 128);
+    return CGSizeMake(256, 68);
 }
 
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
@@ -101,11 +97,14 @@ static NSString * const reuseIdentifier = @"MainCollectionViewCell";
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSInteger r = indexPath.row;
+    NSInteger r = indexPath.section;
     if (r == 0) {
         SimpleAnimatViewController* simple = [[SimpleAnimatViewController alloc] initWithNibName:@"SimpleAnimatViewController" bundle:nil];
         [self.navigationController pushViewController:simple animated:YES];
         //[self presentViewController:simple animated:YES completion:^{}];
+    } else {
+        TransformKeyFrameViewController* tf = [[TransformKeyFrameViewController alloc] initWithNibName:@"TransformKeyFrameViewController" bundle:nil];
+        [self.navigationController pushViewController:tf animated:YES];
     }
 }
 /*
