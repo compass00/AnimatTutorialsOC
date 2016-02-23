@@ -10,8 +10,16 @@
 #import "MainCollectionViewCell.h"
 #import "SimpleAnimatViewController.h"
 #import "TransformKeyFrameViewController.h"
+#import "TransitionsViewController.h"
+#import "SpringViewController.h"
 
+#define SIZEHEIGHT 96.0
+#define INDEX_OF_UIVIEW 0
+#define INDEX_OF_SPRING 1
+#define INDEX_OF_TRANSITION 2
+#define INDEX_OF_TRANSFORM 3
 @interface MainCollectionViewController ()
+@property (strong, nonatomic) NSMutableArray *titleArray;
 
 @end
 
@@ -22,13 +30,20 @@ static NSString * const reuseIdentifier = @"MainCollectionViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-     
+    _titleArray = [[NSMutableArray alloc] init];
+
+    [_titleArray addObject:[NSString stringWithFormat:@"%@", @"UIView Animation"]];
+    [_titleArray addObject:[NSString stringWithFormat:@"%@", @"Spring"]];
+    [_titleArray addObject:[NSString stringWithFormat:@"%@", @"Transition"]];
+    [_titleArray addObject:[NSString stringWithFormat:@"%@", @"ransform and Keyframe"]];
+
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Register cell classes
     [self.collectionView registerClass:[MainCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
      // Do any additional setup after loading the view.
+    self.collectionView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bggrid"]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,12 +64,12 @@ static NSString * const reuseIdentifier = @"MainCollectionViewCell";
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 2;
+    return 1;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 1;
+    return 5;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -62,11 +77,23 @@ static NSString * const reuseIdentifier = @"MainCollectionViewCell";
    MainCollectionViewCell *cell = (MainCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"MainCollectionViewCell" forIndexPath:indexPath];
     // Configure the cell
     if (!cell) {
-        cell = [[MainCollectionViewCell alloc] initWithFrame:CGRectMake(0, 0, 256, 68)];
+        cell = [[MainCollectionViewCell alloc] initWithFrame:CGRectMake(0, 0, SIZEHEIGHT, SIZEHEIGHT)];
     }
     
-    NSInteger r = indexPath.section;
-    cell.textLabel.text = r == 0 ? [NSString stringWithFormat:@"%@", @"UIView Animation"] : [NSString stringWithFormat:@"%@", @"Transform and Keyframe"];
+    cell.layer.borderWidth = 1.0;
+    cell.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.75];
+    cell.layer.cornerRadius = 5.0;
+    //cell.layer.masksToBounds = YES;
+    cell.clipsToBounds = NO;
+    cell.layer.borderColor = [[UIColor whiteColor] CGColor];
+    cell.layer.shadowColor = [[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.5] CGColor];
+    cell.layer.shadowOffset = CGSizeMake(30, 30);
+    
+    NSInteger r = indexPath.row;
+    if (r < [_titleArray count]) {
+        cell.textLabel.text = [_titleArray objectAtIndex:r];
+    }
+    cell.textLabel.textAlignment = NSTextAlignmentCenter;
      return cell;
 }
 
@@ -75,12 +102,12 @@ static NSString * const reuseIdentifier = @"MainCollectionViewCell";
 //定义每个UICollectionView 的大小
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(256, 68);
+    return CGSizeMake(SIZEHEIGHT, SIZEHEIGHT);
 }
 
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsMake(5, 5, 5, 5);
+    return UIEdgeInsetsMake(10, 10, 10, 10);
 }
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking
@@ -97,15 +124,34 @@ static NSString * const reuseIdentifier = @"MainCollectionViewCell";
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSInteger r = indexPath.section;
-    if (r == 0) {
-        SimpleAnimatViewController* simple = [[SimpleAnimatViewController alloc] initWithNibName:@"SimpleAnimatViewController" bundle:nil];
-        [self.navigationController pushViewController:simple animated:YES];
-        //[self presentViewController:simple animated:YES completion:^{}];
-    } else {
-        TransformKeyFrameViewController* tf = [[TransformKeyFrameViewController alloc] initWithNibName:@"TransformKeyFrameViewController" bundle:nil];
-        [self.navigationController pushViewController:tf animated:YES];
+    NSInteger r = indexPath.row;
+    UIViewController* subViewController = nil;
+    switch (r) {
+        case INDEX_OF_UIVIEW: {
+            subViewController = [[SimpleAnimatViewController alloc] initWithNibName:@"SimpleAnimatViewController" bundle:nil];
+              break;
+        }
+        case INDEX_OF_SPRING:
+            subViewController = [[SpringViewController alloc] initWithNibName:@"SpringViewController" bundle:nil];
+            break;
+        case INDEX_OF_TRANSITION:
+            subViewController = [[TransitionsViewController alloc] initWithNibName:@"TransitionsViewController" bundle:nil];
+            break;
+        case INDEX_OF_TRANSFORM: {
+            subViewController = [[TransformKeyFrameViewController alloc] initWithNibName:@"TransformKeyFrameViewController" bundle:nil];
+        }
+            break;
+            
+        default:
+            break;
     }
+
+    if (subViewController != nil) {
+        subViewController.title = [_titleArray objectAtIndex:r];
+
+        [self.navigationController pushViewController:subViewController animated:YES];
+    }
+
 }
 /*
 // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
