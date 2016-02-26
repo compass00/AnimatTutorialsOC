@@ -13,6 +13,8 @@
 #import "TransitionsViewController.h"
 #import "SpringViewController.h"
 #import "TransformViewController.h"
+#import "CALayerAnimationViewController.h"
+
 #define SIZEHEIGHT 96.0
 #define INDEX_OF_UIVIEW 0
 #define INDEX_OF_SPRING 1
@@ -36,6 +38,7 @@ static NSString * const reuseIdentifier = @"MainCollectionViewCell";
     [_titleArray addObject:[NSString stringWithFormat:@"%@", @"Spring"]];
     [_titleArray addObject:[NSString stringWithFormat:@"%@", @"Transition"]];
     [_titleArray addObject:[NSString stringWithFormat:@"%@", @"Keyframe"]];
+    [_titleArray addObject:[NSString stringWithFormat:@"%@", @"CALayer"]];
     [_titleArray addObject:[NSString stringWithFormat:@"%@", @"Transform"]];
     
 
@@ -144,10 +147,14 @@ static NSString * const reuseIdentifier = @"MainCollectionViewCell";
         }
             break;
         case 4: {
+            subViewController = [[CALayerAnimationViewController alloc] initWithNibName:@"CALayerAnimationViewController" bundle:nil];
+        }
+            break;
+        case 5: {
             subViewController = [[TransformViewController alloc] initWithNibName:@"TransformViewController" bundle:nil];
         }
             break;
-  
+ 
         default:
             break;
     }
