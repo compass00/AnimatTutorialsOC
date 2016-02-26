@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface AnimationBaseViewController : UIViewController
+@property (nonatomic) BOOL run;
 - (IBAction)playAnimation:(id)sender;
 
 @end

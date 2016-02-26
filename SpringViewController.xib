@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SpringViewController">
             <connections>
+                <outlet property="ball0" destination="8wC-BY-RV4" id="oRx-lj-uaL"/>
+                <outlet property="ball1" destination="JUX-FY-zMI" id="Okt-Ir-Q7o"/>
+                <outlet property="ball2" destination="b06-sj-ucN" id="cCZ-g6-yfG"/>
+                <outlet property="ball3" destination="xGa-yI-xu9" id="NBq-cm-35k"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +19,100 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wC-BY-RV4">
+                    <rect key="frame" x="26" y="400" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="0IB-An-yoa"/>
+                        <constraint firstAttribute="height" constant="24" id="hth-be-p6W"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="ball"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JUX-FY-zMI">
+                    <rect key="frame" x="83" y="400" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="Isv-5P-h1a"/>
+                        <constraint firstAttribute="width" constant="24" id="PTY-8x-xUN"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="ball"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGa-yI-xu9">
+                    <rect key="frame" x="213" y="400" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="sLF-6V-W27"/>
+                        <constraint firstAttribute="height" constant="24" id="xuo-eL-mPb"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="ball"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b06-sj-ucN">
+                    <rect key="frame" x="149" y="400" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="JDt-u6-auW"/>
+                        <constraint firstAttribute="height" constant="24" id="Twd-mu-lXP"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="ball"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KwH-KL-ASU">
+                    <rect key="frame" x="204" y="450" width="42" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="42" id="dAR-n5-78y"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUi-NQ-Cva">
+                    <rect key="frame" x="74" y="450" width="42" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="42" id="yIM-V3-TSD"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvK-VD-F9p">
+                    <rect key="frame" x="17" y="450" width="42" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="08e-RL-zfn"/>
+                        <constraint firstAttribute="width" constant="42" id="ZtB-SH-qCg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94u-0L-zgQ">
+                    <rect key="frame" x="140" y="450" width="42" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="42" id="HuA-F4-kiZ"/>
+                        <constraint firstAttribute="height" constant="21" id="ipi-fP-XcG"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="94u-0L-zgQ" firstAttribute="leading" secondItem="sUi-NQ-Cva" secondAttribute="trailing" constant="24" id="02d-5p-Y4k"/>
+                <constraint firstItem="JUX-FY-zMI" firstAttribute="leading" secondItem="8wC-BY-RV4" secondAttribute="trailing" constant="33" id="6fP-Md-c8c"/>
+                <constraint firstItem="sUi-NQ-Cva" firstAttribute="top" secondItem="JUX-FY-zMI" secondAttribute="bottom" constant="26" id="GCx-p6-JLM"/>
+                <constraint firstAttribute="bottomMargin" secondItem="kvK-VD-F9p" secondAttribute="bottom" constant="121" id="O0k-HL-tjT"/>
+                <constraint firstAttribute="bottomMargin" secondItem="94u-0L-zgQ" secondAttribute="bottom" constant="121" id="Omm-TP-Kav"/>
+                <constraint firstItem="kvK-VD-F9p" firstAttribute="top" secondItem="8wC-BY-RV4" secondAttribute="bottom" constant="26" id="X3j-2E-hU3"/>
+                <constraint firstItem="b06-sj-ucN" firstAttribute="leading" secondItem="JUX-FY-zMI" secondAttribute="trailing" constant="42" id="XnG-th-qMi"/>
+                <constraint firstItem="kvK-VD-F9p" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" constant="9" id="Zlf-ai-VNm"/>
+                <constraint firstItem="sUi-NQ-Cva" firstAttribute="leading" secondItem="kvK-VD-F9p" secondAttribute="trailing" constant="15" id="c0B-B0-jho"/>
+                <constraint firstItem="KwH-KL-ASU" firstAttribute="top" secondItem="xGa-yI-xu9" secondAttribute="bottom" constant="26" id="fc2-p8-fYt"/>
+                <constraint firstItem="KwH-KL-ASU" firstAttribute="leading" secondItem="94u-0L-zgQ" secondAttribute="trailing" constant="22" id="gZu-hY-1MF"/>
+                <constraint firstAttribute="bottomMargin" secondItem="sUi-NQ-Cva" secondAttribute="bottom" constant="121" id="gt1-gW-4t8"/>
+                <constraint firstItem="8wC-BY-RV4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" constant="18" id="mKo-VY-JDX"/>
+                <constraint firstAttribute="bottomMargin" secondItem="KwH-KL-ASU" secondAttribute="bottom" constant="121" id="oQB-rs-UXU"/>
+                <constraint firstItem="xGa-yI-xu9" firstAttribute="leading" secondItem="b06-sj-ucN" secondAttribute="trailing" constant="40" id="t2n-uU-cL2"/>
+                <constraint firstItem="94u-0L-zgQ" firstAttribute="top" secondItem="b06-sj-ucN" secondAttribute="bottom" constant="26" id="xig-Zh-G3i"/>
+            </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="ball" width="24" height="24"/>
+    </resources>
 </document>

@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.run = NO;
     // Do any additional setup after loading the view.
     UIButton* playbutton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 32, 32)];
     [playbutton setImage:[UIImage imageNamed:@"playImage"] forState:UIControlStateNormal];

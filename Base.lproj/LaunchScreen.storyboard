@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,34 +17,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgImage" translatesAutoresizingMaskIntoConstraints="NO" id="6sV-EB-n0V">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="iOS Animation Turorials" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uE-7o-dXf">
+                                <rect key="frame" x="200" y="126" width="229" height="52"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="229" id="6dw-cZ-RIy"/>
+                                    <constraint firstAttribute="height" constant="52" id="OvQ-N9-FLv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="By compass" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYO-uK-4JW">
+                                <rect key="frame" x="267" y="482" width="94" height="21"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="hl.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="6sV-EB-n0V">
+                                <rect key="frame" x="250" y="329" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="a65-bY-dNX"/>
+                                    <constraint firstAttribute="width" constant="128" id="hJh-DN-4mE"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS Animation Turorials" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uE-7o-dXf">
-                                <rect key="frame" x="211" y="154" width="178" height="21"/>
-                                <color key="backgroundColor" red="0.86666666670000003" green="0.88235294119999996" blue="0.94901960780000005" alpha="1" colorSpace="deviceRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By compass" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYO-uK-4JW">
-                                <rect key="frame" x="253" y="381" width="94" height="21"/>
-                                <color key="backgroundColor" red="0.86666666670000003" green="0.88235294119999996" blue="0.94901960780000005" alpha="1" colorSpace="deviceRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2uE-7o-dXf" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="5od-NI-Aj1"/>
-                            <constraint firstItem="6sV-EB-n0V" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" id="SgD-AN-4V0"/>
-                            <constraint firstItem="WYO-uK-4JW" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Wbc-I2-pVt"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="WYO-uK-4JW" secondAttribute="bottom" constant="198" id="agH-vi-EOd"/>
-                            <constraint firstItem="2uE-7o-dXf" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="134" id="c3A-Di-zYV"/>
-                            <constraint firstItem="6sV-EB-n0V" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="cJs-YH-n4D"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="6sV-EB-n0V" secondAttribute="trailing" constant="-20" id="jV4-gz-BDH"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="6sV-EB-n0V" secondAttribute="bottom" id="tGy-z8-T52"/>
+                            <constraint firstItem="6sV-EB-n0V" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="6BH-7m-mte"/>
+                            <constraint firstItem="2uE-7o-dXf" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="DJY-wA-AoN"/>
+                            <constraint firstItem="2uE-7o-dXf" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="106" id="JHa-vY-w5e"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="WYO-uK-4JW" secondAttribute="bottom" constant="97" id="Tex-M3-Peu"/>
+                            <constraint firstItem="WYO-uK-4JW" firstAttribute="top" secondItem="6sV-EB-n0V" secondAttribute="bottom" constant="25" id="ZeC-Jz-ReY"/>
+                            <constraint firstItem="WYO-uK-4JW" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="dj7-Gk-GaG"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -55,6 +60,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bgImage" width="320" height="480"/>
+        <image name="hl.jpg" width="200" height="200"/>
     </resources>
 </document>

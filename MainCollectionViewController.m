@@ -12,7 +12,7 @@
 #import "TransformKeyFrameViewController.h"
 #import "TransitionsViewController.h"
 #import "SpringViewController.h"
-
+#import "TransformViewController.h"
 #define SIZEHEIGHT 96.0
 #define INDEX_OF_UIVIEW 0
 #define INDEX_OF_SPRING 1
@@ -35,7 +35,9 @@ static NSString * const reuseIdentifier = @"MainCollectionViewCell";
     [_titleArray addObject:[NSString stringWithFormat:@"%@", @"UIView Animation"]];
     [_titleArray addObject:[NSString stringWithFormat:@"%@", @"Spring"]];
     [_titleArray addObject:[NSString stringWithFormat:@"%@", @"Transition"]];
-    [_titleArray addObject:[NSString stringWithFormat:@"%@", @"ransform and Keyframe"]];
+    [_titleArray addObject:[NSString stringWithFormat:@"%@", @"Keyframe"]];
+    [_titleArray addObject:[NSString stringWithFormat:@"%@", @"Transform"]];
+    
 
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -69,7 +71,7 @@ static NSString * const reuseIdentifier = @"MainCollectionViewCell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 5;
+    return [_titleArray count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -127,21 +129,25 @@ static NSString * const reuseIdentifier = @"MainCollectionViewCell";
     NSInteger r = indexPath.row;
     UIViewController* subViewController = nil;
     switch (r) {
-        case INDEX_OF_UIVIEW: {
+        case 0: {
             subViewController = [[SimpleAnimatViewController alloc] initWithNibName:@"SimpleAnimatViewController" bundle:nil];
               break;
         }
-        case INDEX_OF_SPRING:
+        case 1:
             subViewController = [[SpringViewController alloc] initWithNibName:@"SpringViewController" bundle:nil];
             break;
-        case INDEX_OF_TRANSITION:
+        case 2:
             subViewController = [[TransitionsViewController alloc] initWithNibName:@"TransitionsViewController" bundle:nil];
             break;
-        case INDEX_OF_TRANSFORM: {
+        case 3: {
             subViewController = [[TransformKeyFrameViewController alloc] initWithNibName:@"TransformKeyFrameViewController" bundle:nil];
         }
             break;
-            
+        case 4: {
+            subViewController = [[TransformViewController alloc] initWithNibName:@"TransformViewController" bundle:nil];
+        }
+            break;
+  
         default:
             break;
     }

@@ -9,7 +9,6 @@
 #import "SimpleAnimatViewController.h"
 
 @interface SimpleAnimatViewController ()
-@property BOOL run;
 
 @end
 
@@ -17,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.run = NO;
     // Do any additional setup after loading the view from its nib.
     self.title = [NSString stringWithFormat:@"%@", @"UIView"];
  
@@ -38,7 +38,7 @@
 */
 - (IBAction)playAnimation:(id)sender {
     const CGFloat offset = CGRectGetWidth([UIScreen mainScreen].bounds);
-    if (!_run) {
+    if (!self.run) {
         [UIView animateWithDuration: 0.5 animations: ^{
             self.carblue.center = CGPointMake(offset - self.carblue.frame.size.width / 2, self.carblue.center.y);
         } completion: ^(BOOL finished){
@@ -65,7 +65,7 @@
             }];
         }];
     }
-    _run = !_run;
+    self.run = !self.run;
     
 }
 

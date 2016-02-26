@@ -10,5 +10,9 @@
 #import "AnimationBaseViewController.h"
 
 @interface SpringViewController : AnimationBaseViewController
+@property (strong, nonatomic) IBOutlet UIButton* ball0;
+@property (strong, nonatomic) IBOutlet UIButton* ball1;
+@property (strong, nonatomic) IBOutlet UIButton* ball2;
+@property (strong, nonatomic) IBOutlet UIButton* ball3;
 
 @end
