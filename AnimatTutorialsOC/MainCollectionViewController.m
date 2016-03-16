@@ -16,12 +16,18 @@
 #import "CALayerAnimationViewController.h"
 
 #define SIZEHEIGHT 96.0
-#define INDEX_OF_UIVIEW 0
-#define INDEX_OF_SPRING 1
-#define INDEX_OF_TRANSITION 2
-#define INDEX_OF_TRANSFORM 3
+typedef NS_ENUM(NSInteger, C_ANIMATION_TYPE) {
+    C_ANIMATION_TYPE_UIVIEW         = 0,
+    C_ANIMATION_TYPE_SPRING         = 1,
+    C_ANIMATION_TYPE_TRANSITION     = 2,
+    C_ANIMATION_TYPE_KEYFRAME       = 3,
+    C_ANIMATION_TYPE_CALAYER        = 4,
+    C_ANIMATION_TYPE_TRANSFORM      = 5
+
+};
+
 @interface MainCollectionViewController ()
-@property (strong, nonatomic) NSMutableArray *titleArray;
+@property (strong, nonatomic) NSArray *titleArray;
 
 @end
 
@@ -32,16 +38,8 @@ static NSString * const reuseIdentifier = @"MainCollectionViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _titleArray = [[NSMutableArray alloc] init];
-
-    [_titleArray addObject:[NSString stringWithFormat:@"%@", @"UIView Animation"]];
-    [_titleArray addObject:[NSString stringWithFormat:@"%@", @"Spring"]];
-    [_titleArray addObject:[NSString stringWithFormat:@"%@", @"Transition"]];
-    [_titleArray addObject:[NSString stringWithFormat:@"%@", @"Keyframe"]];
-    [_titleArray addObject:[NSString stringWithFormat:@"%@", @"CALayer"]];
-    [_titleArray addObject:[NSString stringWithFormat:@"%@", @"Transform"]];
-    
-
+    _titleArray = @[@"UIView Animation", @"Spring", @"Transition", @"Keyframe", @"CALayer", @"Transform"];
+    NSLog(@"array count %@", @(_titleArray.count));
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -49,6 +47,14 @@ static NSString * const reuseIdentifier = @"MainCollectionViewCell";
     [self.collectionView registerClass:[MainCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
      // Do any additional setup after loading the view.
     self.collectionView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bggrid"]];
+    Class class = NSClassFromString(@"ViewController");
+    id vc = [[class alloc] init];
+    SEL selector = NSSelectorFromString(@"ViewController");
+    [vc performSelector:selector];
+    
+    static void newViewDidLoad(id slf, SEL sel) {}
+    
+    class_replaceMethor(class, selector, newView)
 }
 
 - (void)didReceiveMemoryWarning {
@@ -132,25 +138,25 @@ static NSString * const reuseIdentifier = @"MainCollectionViewCell";
     NSInteger r = indexPath.row;
     UIViewController* subViewController = nil;
     switch (r) {
-        case 0: {
+        case C_ANIMATION_TYPE_UIVIEW: {
             subViewController = [[SimpleAnimatViewController alloc] initWithNibName:@"SimpleAnimatViewController" bundle:nil];
               break;
         }
-        case 1:
+        case C_ANIMATION_TYPE_SPRING:
             subViewController = [[SpringViewController alloc] initWithNibName:@"SpringViewController" bundle:nil];
             break;
-        case 2:
+        case C_ANIMATION_TYPE_TRANSITION:
             subViewController = [[TransitionsViewController alloc] initWithNibName:@"TransitionsViewController" bundle:nil];
             break;
-        case 3: {
+        case C_ANIMATION_TYPE_KEYFRAME: {
             subViewController = [[TransformKeyFrameViewController alloc] initWithNibName:@"TransformKeyFrameViewController" bundle:nil];
         }
             break;
-        case 4: {
+        case C_ANIMATION_TYPE_CALAYER: {
             subViewController = [[CALayerAnimationViewController alloc] initWithNibName:@"CALayerAnimationViewController" bundle:nil];
         }
             break;
-        case 5: {
+        case C_ANIMATION_TYPE_TRANSFORM: {
             subViewController = [[TransformViewController alloc] initWithNibName:@"TransformViewController" bundle:nil];
         }
             break;

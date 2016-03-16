@@ -8,6 +8,7 @@
 
 #import "SpringViewController.h"
 
+
 @interface SpringViewController ()
 
 @end
@@ -18,7 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.ball0.center = CGPointMake(self.view.center.x, 85.0);
-}
+ }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
