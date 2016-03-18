@@ -14,7 +14,7 @@
 #import "SpringViewController.h"
 #import "TransformViewController.h"
 #import "CALayerAnimationViewController.h"
-
+#import "OpenGLViewController.h"
 #define SIZEHEIGHT 96.0
 typedef NS_ENUM(NSInteger, C_ANIMATION_TYPE) {
     C_ANIMATION_TYPE_UIVIEW         = 0,
@@ -22,7 +22,8 @@ typedef NS_ENUM(NSInteger, C_ANIMATION_TYPE) {
     C_ANIMATION_TYPE_TRANSITION     = 2,
     C_ANIMATION_TYPE_KEYFRAME       = 3,
     C_ANIMATION_TYPE_CALAYER        = 4,
-    C_ANIMATION_TYPE_TRANSFORM      = 5
+    C_ANIMATION_TYPE_TRANSFORM      = 5,
+    C_ANIMATION_TYPE_OPENGL         = 6
 
 };
 
@@ -38,7 +39,7 @@ static NSString * const reuseIdentifier = @"MainCollectionViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _titleArray = @[@"UIView Animation", @"Spring", @"Transition", @"Keyframe", @"CALayer", @"Transform"];
+    _titleArray = @[@"UIView Animation", @"Spring", @"Transition", @"Keyframe", @"CALayer", @"Transform", @"OpenGLViewController"];
     NSLog(@"array count %@", @(_titleArray.count));
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -46,15 +47,9 @@ static NSString * const reuseIdentifier = @"MainCollectionViewCell";
     // Register cell classes
     [self.collectionView registerClass:[MainCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
      // Do any additional setup after loading the view.
+    
     self.collectionView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bggrid"]];
-    Class class = NSClassFromString(@"ViewController");
-    id vc = [[class alloc] init];
-    SEL selector = NSSelectorFromString(@"ViewController");
-    [vc performSelector:selector];
-    
-    static void newViewDidLoad(id slf, SEL sel) {}
-    
-    class_replaceMethor(class, selector, newView)
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -158,6 +153,10 @@ static NSString * const reuseIdentifier = @"MainCollectionViewCell";
             break;
         case C_ANIMATION_TYPE_TRANSFORM: {
             subViewController = [[TransformViewController alloc] initWithNibName:@"TransformViewController" bundle:nil];
+        }
+            break;
+        case C_ANIMATION_TYPE_OPENGL: {
+            subViewController = [[OpenGLViewController alloc] initWithNibName:@"OpenGLViewController" bundle:nil];
         }
             break;
  

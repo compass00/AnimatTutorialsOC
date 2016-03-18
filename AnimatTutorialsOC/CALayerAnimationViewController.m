@@ -52,7 +52,7 @@
     layer.cornerRadius = WIDTH/2;
     //设置阴影
     layer.shadowColor = [UIColor grayColor].CGColor;
-    layer.shadowOffset = CGSizeMake(2, 2);
+    layer.shadowOffset = CGSizeMake(5, 5);
     layer.shadowOpacity =.9;
     layer.name = @"main";
     //layer.name = @"main";
@@ -69,6 +69,7 @@
     [self addSubLayer:@"top"];
     [self addSubLayer:@"bottom"];
     [self setSubLayersPosition];
+    
 }
 
 #pragma mark 点击放大
@@ -87,13 +88,13 @@
     }
     CGFloat width = mainlayer.bounds.size.width;
     if (width == WIDTH) {
-        width = WIDTH*4;
+        width = WIDTH*2;
     }else{
         width = WIDTH;
     }
-    mainlayer.bounds=CGRectMake(0, 0, width, width);
-    mainlayer.position=[touch locationInView:self.view];
-    mainlayer.cornerRadius=width/2;
+    mainlayer.bounds = CGRectMake(0, 0, width, width);
+    mainlayer.position = [touch locationInView:self.view];
+    mainlayer.cornerRadius = width/2;
     [self setSubLayersPosition];
 }
 
@@ -112,23 +113,24 @@
     
     CGFloat width = mainlayer.bounds.size.width;
     CGPoint pos = mainlayer.position;
-    BOOL toCenter = NO;//(width == WIDTH) ;
+    BOOL toCenter = (width == WIDTH) ;
     for (CALayer* layer in self.view.layer.sublayers) {
         if (layer != nil && ![layer.name isEqualToString:@"main"]) {
+            
             if ([layer.name isEqualToString:@"left"]) {
-                layer.position = toCenter ? CGPointMake(pos.x, pos.y) : CGPointMake(pos.x, pos.y - 2*width);
-                layer.cornerRadius = width / 2;
+                layer.position = toCenter ? CGPointMake(pos.x, pos.y) : CGPointMake(pos.x, pos.y - width);
+                layer.cornerRadius = width / 8;
             } else if ([layer.name isEqualToString:@"right"]) {
-                layer.position = toCenter ? CGPointMake(pos.x, pos.y) : CGPointMake(pos.x, pos.y + 2*width);
-                layer.cornerRadius = width / 2;
+                layer.position = toCenter ? CGPointMake(pos.x, pos.y) : CGPointMake(pos.x, pos.y + width);
+                layer.cornerRadius = width / 8;
             } else if ([layer.name isEqualToString:@"top"]) {
-                layer.position = toCenter ? CGPointMake(pos.x, pos.y) : CGPointMake(pos.x - 2*width, pos.y);
-                layer.cornerRadius = width / 2;
+                layer.position = toCenter ? CGPointMake(pos.x, pos.y) : CGPointMake(pos.x - width, pos.y);
+                layer.cornerRadius = width / 8;
             } else if ([layer.name isEqualToString:@"bottom"]) {
-                layer.position = toCenter ? CGPointMake(pos.x, pos.y) : CGPointMake(pos.x + 2*width, pos.y);
-                layer.cornerRadius = width / 2;
+                layer.position = toCenter ? CGPointMake(pos.x, pos.y) : CGPointMake(pos.x + width, pos.y);
+                layer.cornerRadius = width / 8;
             }
-            layer.bounds = CGRectMake(0, 0, WIDTH / 2,WIDTH / 2);
+            layer.bounds = CGRectMake(0, 0, width / 4, width / 4);
             layer.backgroundColor=[UIColor colorWithRed:0 green:146/255.0 blue:1.0 alpha:1.0].CGColor;
         }
     }
@@ -136,8 +138,9 @@
 
 - (void)addSubLayer:(NSString*)name {
     CALayer* leftLayer = [[CALayer alloc] init];
-    leftLayer.bounds = CGRectMake(0, 0, WIDTH / 2,WIDTH / 2);
+    leftLayer.bounds = CGRectMake(0, 0, WIDTH, WIDTH);
     leftLayer.name = name;
+    leftLayer.anchorPoint = CGPointMake(0.5, 0.5);
     [self.view.layer addSublayer:leftLayer];
 
 }

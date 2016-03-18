@@ -32,6 +32,8 @@
 		0D29729C1C7475C90053324F /* car_o.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D2972971C7475C90053324F /* car_o.png */; };
 		0D29729D1C7475C90053324F /* car_p.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D2972981C7475C90053324F /* car_p.png */; };
 		0D29729E1C7475C90053324F /* car_wheel.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D2972991C7475C90053324F /* car_wheel.png */; };
+		0D3C93F41C9C03CF0088DB1C /* OpenGLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3C93F21C9C03CF0088DB1C /* OpenGLViewController.m */; };
+		0D3C93F51C9C03CF0088DB1C /* OpenGLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D3C93F31C9C03CF0088DB1C /* OpenGLViewController.xib */; };
 		0D3E6BBD1C748098004FBFAF /* chick_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D3E6BB51C748098004FBFAF /* chick_0.png */; };
 		0D3E6BBE1C748098004FBFAF /* chick_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D3E6BB61C748098004FBFAF /* chick_1.png */; };
 		0D3E6BBF1C748098004FBFAF /* chick_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D3E6BB71C748098004FBFAF /* chick_2.png */; };
@@ -98,6 +100,9 @@
 		0D2972971C7475C90053324F /* car_o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car_o.png; sourceTree = "<group>"; };
 		0D2972981C7475C90053324F /* car_p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car_p.png; sourceTree = "<group>"; };
 		0D2972991C7475C90053324F /* car_wheel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car_wheel.png; sourceTree = "<group>"; };
+		0D3C93F11C9C03CF0088DB1C /* OpenGLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenGLViewController.h; path = AnimatTutorialsOC/OpenGLViewController.h; sourceTree = "<group>"; };
+		0D3C93F21C9C03CF0088DB1C /* OpenGLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenGLViewController.m; path = AnimatTutorialsOC/OpenGLViewController.m; sourceTree = "<group>"; };
+		0D3C93F31C9C03CF0088DB1C /* OpenGLViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OpenGLViewController.xib; path = AnimatTutorialsOC/OpenGLViewController.xib; sourceTree = "<group>"; };
 		0D3E6BB51C748098004FBFAF /* chick_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chick_0.png; sourceTree = "<group>"; };
 		0D3E6BB61C748098004FBFAF /* chick_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chick_1.png; sourceTree = "<group>"; };
 		0D3E6BB71C748098004FBFAF /* chick_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chick_2.png; sourceTree = "<group>"; };
@@ -181,6 +186,9 @@
 				0D9900261C7ED2DA001047A7 /* TransformViewController.h */,
 				0D9900271C7ED2DA001047A7 /* TransformViewController.m */,
 				0D9900281C7ED2DA001047A7 /* TransformViewController.xib */,
+				0D3C93F11C9C03CF0088DB1C /* OpenGLViewController.h */,
+				0D3C93F21C9C03CF0088DB1C /* OpenGLViewController.m */,
+				0D3C93F31C9C03CF0088DB1C /* OpenGLViewController.xib */,
 				0D2972781C7475170053324F /* Main.storyboard */,
 				0D29727B1C7475170053324F /* Assets.xcassets */,
 				0D29727D1C7475170053324F /* LaunchScreen.storyboard */,
@@ -337,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D253E8D1C75AB84007E7286 /* SimpleAnimatViewController.xib in Resources */,
+				0D3C93F51C9C03CF0088DB1C /* OpenGLViewController.xib in Resources */,
 				0D25A6F11C8053F3006BDDEC /* road.jpg in Resources */,
 				0D3E6BC41C748098004FBFAF /* egg_3.png in Resources */,
 				0D3E6BC31C748098004FBFAF /* egg_2.png in Resources */,
@@ -394,6 +403,7 @@
 				0D9900291C7ED2DA001047A7 /* TransformViewController.m in Sources */,
 				0D253E921C75B365007E7286 /* MainCollectionViewCell.m in Sources */,
 				0D25A6EE1C804FE9006BDDEC /* CALayerAnimationViewController.m in Sources */,
+				0D3C93F41C9C03CF0088DB1C /* OpenGLViewController.m in Sources */,
 				0D0CE4EE1C7BF8BD00125D71 /* SpringViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
