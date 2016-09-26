@@ -47,6 +47,7 @@
 		0D564EFB1C7AFB2C002C9C6D /* TransformKeyFrameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D564EF91C7AFB2C002C9C6D /* TransformKeyFrameViewController.xib */; };
 		0D564EFE1C7B011E002C9C6D /* AnimationBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D564EFD1C7B011E002C9C6D /* AnimationBaseViewController.m */; };
 		0D564F001C7B0392002C9C6D /* light.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D564EFF1C7B0392002C9C6D /* light.png */; };
+		0D6505221CA4E89400167CEA /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6505211CA4E89400167CEA /* Singleton.m */; };
 		0D8BC0AF1C75A6E20059D940 /* MainCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8BC0AE1C75A6E20059D940 /* MainCollectionViewController.m */; };
 		0D8BC0B31C75A7BA0059D940 /* SimpleAnimatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8BC0B11C75A7BA0059D940 /* SimpleAnimatViewController.m */; };
 		0D9900251C7ECFF9001047A7 /* hl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D9900241C7ECFF9001047A7 /* hl.jpg */; };
@@ -118,6 +119,8 @@
 		0D564EFC1C7B011E002C9C6D /* AnimationBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnimationBaseViewController.h; path = AnimatTutorialsOC/AnimationBaseViewController.h; sourceTree = "<group>"; };
 		0D564EFD1C7B011E002C9C6D /* AnimationBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnimationBaseViewController.m; path = AnimatTutorialsOC/AnimationBaseViewController.m; sourceTree = "<group>"; };
 		0D564EFF1C7B0392002C9C6D /* light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = light.png; sourceTree = "<group>"; };
+		0D6505201CA4E89400167CEA /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		0D6505211CA4E89400167CEA /* Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singleton.m; sourceTree = "<group>"; };
 		0D8BC0AD1C75A6E20059D940 /* MainCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainCollectionViewController.h; path = AnimatTutorialsOC/MainCollectionViewController.h; sourceTree = SOURCE_ROOT; };
 		0D8BC0AE1C75A6E20059D940 /* MainCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainCollectionViewController.m; path = AnimatTutorialsOC/MainCollectionViewController.m; sourceTree = SOURCE_ROOT; };
 		0D8BC0B01C75A7BA0059D940 /* SimpleAnimatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpleAnimatViewController.h; path = AnimatTutorialsOC/SimpleAnimatViewController.h; sourceTree = "<group>"; };
@@ -213,6 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				0D253E8E1C75B338007E7286 /* Main */,
+				0D6505201CA4E89400167CEA /* Singleton.h */,
+				0D6505211CA4E89400167CEA /* Singleton.m */,
 			);
 			path = AnimatTutorialsOC;
 			sourceTree = "<group>";
@@ -403,6 +408,7 @@
 				0D9900291C7ED2DA001047A7 /* TransformViewController.m in Sources */,
 				0D253E921C75B365007E7286 /* MainCollectionViewCell.m in Sources */,
 				0D25A6EE1C804FE9006BDDEC /* CALayerAnimationViewController.m in Sources */,
+				0D6505221CA4E89400167CEA /* Singleton.m in Sources */,
 				0D3C93F41C9C03CF0088DB1C /* OpenGLViewController.m in Sources */,
 				0D0CE4EE1C7BF8BD00125D71 /* SpringViewController.m in Sources */,
 			);

@@ -14,5 +14,6 @@
 @property (strong, nonatomic) IBOutlet UIButton* ball1;
 @property (strong, nonatomic) IBOutlet UIButton* ball2;
 @property (strong, nonatomic) IBOutlet UIButton* ball3;
+@property (strong, nonatomic) IBOutlet UILabel* label;
 
 @end

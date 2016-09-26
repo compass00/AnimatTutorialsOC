@@ -12,6 +12,7 @@
                 <outlet property="ball1" destination="JUX-FY-zMI" id="Okt-Ir-Q7o"/>
                 <outlet property="ball2" destination="b06-sj-ucN" id="cCZ-g6-yfG"/>
                 <outlet property="ball3" destination="xGa-yI-xu9" id="NBq-cm-35k"/>
+                <outlet property="label" destination="Hbg-2O-GFy" id="MO9-Ij-dDE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -90,6 +91,12 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hbg-2O-GFy">
+                    <rect key="frame" x="170" y="141" width="256" height="136"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -105,9 +112,11 @@
                 <constraint firstItem="KwH-KL-ASU" firstAttribute="top" secondItem="xGa-yI-xu9" secondAttribute="bottom" constant="26" id="fc2-p8-fYt"/>
                 <constraint firstItem="KwH-KL-ASU" firstAttribute="leading" secondItem="94u-0L-zgQ" secondAttribute="trailing" constant="22" id="gZu-hY-1MF"/>
                 <constraint firstAttribute="bottomMargin" secondItem="sUi-NQ-Cva" secondAttribute="bottom" constant="121" id="gt1-gW-4t8"/>
+                <constraint firstItem="Hbg-2O-GFy" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="kMk-kH-0HE"/>
                 <constraint firstItem="8wC-BY-RV4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" constant="18" id="mKo-VY-JDX"/>
                 <constraint firstAttribute="bottomMargin" secondItem="KwH-KL-ASU" secondAttribute="bottom" constant="121" id="oQB-rs-UXU"/>
                 <constraint firstItem="xGa-yI-xu9" firstAttribute="leading" secondItem="b06-sj-ucN" secondAttribute="trailing" constant="40" id="t2n-uU-cL2"/>
+                <constraint firstItem="Hbg-2O-GFy" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="w2Y-do-eTA"/>
                 <constraint firstItem="94u-0L-zgQ" firstAttribute="top" secondItem="b06-sj-ucN" secondAttribute="bottom" constant="26" id="xig-Zh-G3i"/>
             </constraints>
         </view>
